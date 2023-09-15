@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:motion_app/screens/animation_screen.dart';
 import 'package:motion_app/screens/easing_screen.dart';
 
 void main() {
@@ -16,6 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.android: ZoomPageTransitionsBuilder(),
+          },
+        ),
       ),
       home: const MyHomePage(title: 'Motion App'),
     );
@@ -71,6 +77,17 @@ class _MyHomePageState extends State<MyHomePage> {
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
                   return const EasingScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('Animation package'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const AnimationScreen();
                 },
               ),
             ),
