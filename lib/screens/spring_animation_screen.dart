@@ -5,6 +5,7 @@ class SpringAnimationScreen extends StatefulWidget {
   const SpringAnimationScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SpringAnimationScreen createState() => _SpringAnimationScreen();
 }
 
