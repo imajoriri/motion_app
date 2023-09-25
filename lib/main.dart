@@ -1,7 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:motion_app/screens/animated_builder_widget_screen.dart';
+import 'package:motion_app/screens/animated_scale_widget_screen.dart';
+import 'package:motion_app/screens/animation_controller_scale_widget_screen.dart';
 import 'package:motion_app/screens/animation_screen.dart';
 import 'package:motion_app/screens/easing_screen.dart';
+import 'package:motion_app/screens/picture_in_picture_screen.dart';
+import 'package:motion_app/screens/scale_transition_widget_screen.dart';
+import 'package:motion_app/screens/spring_animation_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -88,6 +94,72 @@ class _MyHomePageState extends State<MyHomePage> {
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
                   return const AnimationScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('Spring animation'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const SpringAnimationScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('picture in picture'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const PictureInPictureScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('Animated系(AnimatedScale)'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const AnimatedScaleWidgetScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('AnimationControllerを使った実装'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const AnimationControllerScaleWidgetScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('ScaleTransitionを使った実装'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const ScaleTransitionWidgetScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('AnimatedBuilderを使った実装'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const AnimatedBuilderWidgetScreen();
                 },
               ),
             ),
