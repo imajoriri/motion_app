@@ -6,6 +6,7 @@ import 'package:motion_app/screens/animation_controller_scale_widget_screen.dart
 import 'package:motion_app/screens/animation_screen.dart';
 import 'package:motion_app/screens/custome_tween_widget_screen.dart';
 import 'package:motion_app/screens/easing_screen.dart';
+import 'package:motion_app/screens/interval_animation_widget_screen.dart';
 import 'package:motion_app/screens/picture_in_picture_screen.dart';
 import 'package:motion_app/screens/scale_transition_widget_screen.dart';
 import 'package:motion_app/screens/spring_animation_screen.dart';
@@ -172,6 +173,17 @@ class _MyHomePageState extends State<MyHomePage> {
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
                   return const CustomeTweenWidgetScreen();
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile(
+            title: const Text('intervalを使った実装'),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const IntervalAnimationWidgetScreen();
                 },
               ),
             ),
